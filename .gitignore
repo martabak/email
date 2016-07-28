@@ -1,0 +1,20 @@
+$to = "martabak19@gmail.com" ;
+$subject = "From Contact Us";
+$nama = $_REQUEST['nama'] ;
+$email = $_REQUEST['email'] ;
+$phone = $_REQUEST['phone'] ;
+$pesan = $_REQUEST['pesan'];
+$headers = "From: $nama<$email>";
+$message = "$pesan";
+$sent = mail($to, $subject, $message, $headers) ;
+if($sent)
+{
+?>
+alert ('Terima kasih telah mengirim e-mail kepada kami...');
+window.location="http:// demomaduraline.blogspot.co.id/";
+}
+else
+?>
+alert ('Pesan gagal dikirim, silahkan ulangi...!!!');
+window.location="http:// demomaduraline.blogspot.co.id/";
+?>
